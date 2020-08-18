@@ -4,7 +4,7 @@ This project includes the MiSeal algorithm for separating a given minutiae patte
 ## Annotations
 The image provided as an example was taken from <cite>Maio, D., Maltoni, D., Cappelli, R., Wayman, J. L., & Jain, A. K. (2002, August). FVC2002: Second fingerprint verification competition. In Object recognition supported by user interaction for service robots (Vol. 3, pp. 811-814). IEEE.</cite>#
 
-The simulations were made using the latest R version 4.0.2 (2020-06-22) -- "Taking Off Again". Note that for the execution we additionally require Java 11.
+The simulations were made using the latest R version 4.0.2 (2020-06-22) -- "Taking Off Again". Note that for the execution we additionally require Java 11.0.8.
 
 # Application of the MiSeal
 Generate the folder ~/MiSeal in your home directory and copy the jar-file fingerprint-0.0.1.jar and the MiSeal.R script from this repository into this folder. Then, you can run MiSeal(imagePath, roiPath, minutiaePath, numberOfIterations, burnIn). We provide an already correctly formatted example data set in the example folder of this repository.

@@ -1,6 +1,9 @@
 # Minutiae Separating Algorithm (MiSeal)
 This project includes the MiSeal algorithm for separating a given minutiae pattern into necessary and random minutiae. Moreover, we provide a graphical tool for investigating a selected number of a fingerprint's features such as its orientation field (OF), ridge frequency as well as its OFs divergence field and the intensity of necessary minutiae within patches.
 
+## Acknowledgements
+The image provided for an example was taken from <cite>Maio, D., Maltoni, D., Cappelli, R., Wayman, J. L., & Jain, A. K. (2002, August). FVC2002: Second fingerprint verification competition. In Object recognition supported by user interaction for service robots (Vol. 3, pp. 811-814). IEEE.</cite>
+
 # Application of the graphical tool
 Unzip the image archive. Then, go to the /image/bin folder and run 
 - de.unigoettingen.math.fingerprint if you own a linux machine

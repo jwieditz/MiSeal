@@ -14,7 +14,7 @@ Generate the folder ~/MiSeal in your home directory and copy the jar-file finger
 **Table of contents**
 - [Arguments](#arguments)
   * [Main program arguments](#main-program-arguments)
-  * [Normalization arguments](#normalization-arguments)
+  * [Normalisation arguments](#normalization-arguments)
   * [Orientation estimation arguments](#orientation-estimation-arguments)
     + [Arguments for the default estimation method](#arguments-for-the-default-estimation-method)
     + [Arguments for the HWJ estimation method](#arguments-for-the-hwj-estimation-method)

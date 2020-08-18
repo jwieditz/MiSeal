@@ -310,7 +310,7 @@ MiSeal <- function( imagePath, roiPath, minutiaePath, T = 1E6, burnIn = 1E4 ){
   fieldDivergencePath <- paste0(resultsDirectory, "FieldDivergence/", imageName, ".csv")
   ridgeDivergencePath <- paste0(resultsDirectory, "RidgeDivergence/", imageName, ".csv")
   
-  system( paste0("java -jar fingerprint-0.0.1.jar --nogui -roi ", roiPath, " -o default -OdefaultIter=5 -r default -ro ", ridgeFrequencyPath ," -d default -DdefaultSmoothing=gauss -DdefaultSmoothingSize=61 -DdefaultSmoothingMean=0 -DdefaultSmoothingVariance=2500 -do ", fieldDivergencePath, " -LSmoothing=gauss -LSmoothingSize=61 -LSmoothingMean=0 -LSmoothingVariance=2500 -lo ", ridgeDivergencePath, " ", imagePath) )
+  system( paste0("java -jar ~/MiSeal/fingerprint-0.0.1.jar --nogui -roi ", roiPath, " -o default -OdefaultIter=5 -r default -ro ", ridgeFrequencyPath ," -d default -DdefaultSmoothing=gauss -DdefaultSmoothingSize=61 -DdefaultSmoothingMean=0 -DdefaultSmoothingVariance=2500 -do ", fieldDivergencePath, " -LSmoothing=gauss -LSmoothingSize=61 -LSmoothingMean=0 -LSmoothingVariance=2500 -lo ", ridgeDivergencePath, " ", imagePath) )
   
   print("Prepare start of MCMC...")
   

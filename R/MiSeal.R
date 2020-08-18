@@ -477,12 +477,14 @@ MiSeal <- function( imagePath, roiPath, minutiaePath, T = 1E6, burnIn = 1E4 ){
   return( list( beta = modelParameters[1, ], gamma = modelParameters[2, ], lambda = modelParameters[3,], wDistribution = wDistribution, acceptanceRate = acceptanceRate, wAcceptanceRate = wAcceptanceRate, marginalW = wBar, thetaHat = thetaHat ) )
 }
 
-#' Test run of the MiSeal.
+#' Test run of the MiSeal. Please plug in here your local file paths of the image, the region of interest and of the minutiae template.
 
-MiSealTest <- MiSeal( imagePath = "~/ownCloud/Corvin/binarised_images/FVC2002/DB1/FVC2002_DB1_IM_1_1_BIN.png" , 
-                   roiPath = "~/Dokumente/ROI/FVC2002/DB1/IM_1_1.csv", 
-                   minutiaePath = "~/ownCloud/Fingerprint_Matching/Minutia_Cylinder_Code/text_templates/manually_corrected/FVC2002_DB2_IM_7_6.txt", 
-                   T = 1E4, burnIn = 1E4)
+MiSealTest <- MiSeal( imagePath, 
+                   roiPath, 
+                   minutiaePath, 
+                   T = 1E6, burnIn = 1E4)
+
+#' Plot containing trace plots of the parameters as well as posterior probabilities of minutiae being necessary. Here, a low value means "very likely random" and a large value means "very likely necessary". 
 
 dev.new()
 par(mfrow = c(2,2), mar = c(4, 4, 2, 2))

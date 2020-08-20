@@ -21,7 +21,7 @@ This repository is supplementary to <cite>Wieditz, J., Pokern, Y., Schuhmacher, 
 
 | ![ScreenshotGUI](https://github.com/jwieditz/MiSeal/blob/master/GUI/GUI_screenshot.png) | 
 |:--:| 
-| *Screenshot of the graphical fingerprint tool applied to the provided example.* |
+| *Screenshot of the [graphical fingerprint tool](#graphical-fingerprint-tool) applied to the provided example.* |
 
 ## Acknowledgements
 The image provided as an example was taken from <cite>Maio, D., Maltoni, D., Cappelli, R., Wayman, J. L., & Jain, A. K. (2002, August). FVC2002: Second fingerprint verification competition. In Object recognition supported by user interaction for service robots (Vol. 3, pp. 811-814). IEEE.</cite>

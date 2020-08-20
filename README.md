@@ -32,7 +32,7 @@ The simulations were made using the latest R version 4.0.2 (2020-06-22) -- "Taki
   
 # MiSeal
 
- 1. Install the R-package MiSeal.
+ 1. Install the R-package MiSeal from the R folder.
  2. Run `MiSeal(imagePath, roiPath, minutiaePath, numberOfIterations, burnIn)`
 
 We provide an already correctly formatted example data set in the example folder of this repository as well as in the R-packages' data. For more information, see the R documentation.
@@ -57,7 +57,7 @@ We provide an already correctly formatted example data set in the example folder
 
 # Command line fingerprint tool
 
-For usage of the command line tool, you can either use the precompiled fingerprint.jar via
+For usage of the command line tool, you can either use the precompiled fingerprint.jar from the commandLineTool folder via
 
 > `java -jar fingerprint.jar [OPTIONS] fingerprint_image.png`
 

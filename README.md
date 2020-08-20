@@ -14,10 +14,11 @@ If you are interested in
 
  - the MiSeal R-package, go to [MiSeal](#miseal),
  - the graphical tool, go to [graphical fingerprint tool](#graphical-fingerprint-tool),
-![ScreenshotGUI](https://github.com/jwieditz/MiSeal/blob/master/GUI/GUI_screenshot.png)
  - the command line tool, go to [command line fingerprint tool](#command-line-fingerprint-tool).
 
 This repository is supplementary to <cite>Wieditz, J., Pokern, Y., Schuhmacher, D., Huckemann, S. (2020+). Characteristic and Necessary Minutiae in Fingerprints.</cite>
+
+![ScreenshotGUI](https://github.com/jwieditz/MiSeal/blob/master/GUI/GUI_screenshot.png)
 
 ## Acknowledgements
 The image provided as an example was taken from <cite>Maio, D., Maltoni, D., Cappelli, R., Wayman, J. L., & Jain, A. K. (2002, August). FVC2002: Second fingerprint verification competition. In Object recognition supported by user interaction for service robots (Vol. 3, pp. 811-814). IEEE.</cite>

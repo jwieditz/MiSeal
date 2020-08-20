@@ -3,7 +3,7 @@
 This project includes 
 
  - the MiSeal algorithm for separating a given minutiae pattern into necessary and random minutiae,
- - a graphical tool for investigating a selected number of a fingerprint's features such as 
+ - a graphical and an command line interface for investigating a selected number of a fingerprint's features such as 
 	 - its orientation field (OF), 
 	 - its ridge frequency (RF),
 	 - the field and ridge divergence,

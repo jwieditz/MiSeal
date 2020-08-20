@@ -1,3 +1,4 @@
+
 # Minutiae Separating Algorithm (MiSeal)
 
 This project includes 
@@ -13,16 +14,12 @@ If you are interested in
 
  - the MiSeal R-package, go to [MiSeal](#miseal),
  - the graphical tool, go to [graphical fingerprint tool](#graphical-fingerprint-tool),
+![ScreenshotGUI](https://github.com/jwieditz/MiSeal/blob/master/GUI/GUI_screenshot.png)
  - the command line tool, go to [command line fingerprint tool](#command-line-fingerprint-tool).
 
 This repository is supplementary to <cite>Wieditz, J., Pokern, Y., Schuhmacher, D., Huckemann, S. (2020+). Characteristic and Necessary Minutiae in Fingerprints.</cite>
 
-## GUI Spoiler
-
-![ScreenshotGUI](https://github.com/jwieditz/MiSeal/blob/master/GUI/GUI_screenshot.png)
-
-## Annotations
-
+## Acknowledgements
 The image provided as an example was taken from <cite>Maio, D., Maltoni, D., Cappelli, R., Wayman, J. L., & Jain, A. K. (2002, August). FVC2002: Second fingerprint verification competition. In Object recognition supported by user interaction for service robots (Vol. 3, pp. 811-814). IEEE.</cite>
 
   
@@ -33,7 +30,8 @@ The simulations were made using the latest R version 4.0.2 (2020-06-22) -- "Taki
 # MiSeal
 
  1. Install the R-package MiSeal from the R folder.
- 2. Run `MiSeal(imagePath, roiPath, minutiaePath, numberOfIterations, burnIn)`
+ 2. Load the library via `library(MiSeal)`
+ 3. Run the example by typing `example(MiSeal)`
 
 We provide an already correctly formatted example data set in the example folder of this repository as well as in the R-packages' data. For more information, see the R documentation.
 

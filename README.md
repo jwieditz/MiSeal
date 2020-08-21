@@ -40,12 +40,12 @@ We provide an already correctly formatted example data set in the example folder
 # Graphical fingerprint tool
 
  1. Unzip the image archive.
- 2. Go to the /image/bin folder.
+ 2. Go to the /jmiseal/bin folder.
  3. Depending on your OS run the following file:
 	 - ## Linux
-		 - de.unigoettingen.math.fingerprint
+		 - JMiSeal
 	 - ## Windows
-		 - de.unigoettingen.math.fingerprint.bat
+		 - JMiSeal.bat
 	 - ## macOS
 		 - 
 

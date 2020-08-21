@@ -31,7 +31,7 @@ The image provided as an example was taken from <cite>Maio, D., Maltoni, D., Cap
 
 1. Install the R-package MiSeal via
 	`library(remotes)`
-	`install_github('jwieditz/MiSeal/MiSeal')`
+	`install_github('jwieditz/MiSeal/MiSeal')`.
 2. Load the library via `library(MiSeal)`.
 3. For a fingerprint application, run `example(MiSeal)`.
 4. For a general point process application, run `example(PostSeal)`.
@@ -49,7 +49,7 @@ We provide an already correctly formatted example data set in the example folder
 	 - ## Windows
 		 - JMiSeal.bat
 	 - ## macOS
-		 - 
+		 - currently not available
 
 
 

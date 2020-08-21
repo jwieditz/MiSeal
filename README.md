@@ -3,18 +3,18 @@
 
 This project includes 
 
- - the MiSeal algorithm for separating a given minutiae pattern into necessary and random minutiae,
+ - the MiSeal R package including the algorithms *MiSeal* and *PostSeal* for separating a superposition of a homogeneous Poisson process and an inhomogeneous Strauss-hard core process.	 
  - a graphical and a command line interface for investigating a selected number of a fingerprint's features such as 
 	 - its orientation field (OF), 
 	 - its ridge frequency (RF),
 	 - the field and ridge divergence,
 	 - the intensity of necessary minutiae within patches
 
+
 If you are interested in 
 
  - the MiSeal R-package, go to [MiSeal](#miseal),
  - the graphical tool, go to [graphical fingerprint tool](#graphical-fingerprint-tool),
-
  - the command line tool, go to [command line fingerprint tool](#command-line-fingerprint-tool).
 
 This repository is supplementary to <cite>Wieditz, J., Pokern, Y., Schuhmacher, D., Huckemann, S. (2020+). Characteristic and Necessary Minutiae in Fingerprints.</cite>
@@ -29,8 +29,9 @@ The image provided as an example was taken from <cite>Maio, D., Maltoni, D., Cap
 # MiSeal
 
  1. Install the R-package MiSeal from the R folder.
- 2. Load the library via `library(MiSeal)`
- 3. Run the example by typing `example(MiSeal)`
+ 2. Load the library via `library(MiSeal)`.
+ 3. For a fingerprint application, run `example(MiSeal)`.
+ 4. For a general point process application, run `example(PostSeal)`.
 
 We provide an already correctly formatted example data set in the example folder of this repository as well as in the R-packages' data. The simulations were made using the latest R version 4.0.2 (2020-06-22) -- "Taking Off Again". Note that for the execution we additionally require Java 11. For more information, see the R documentation.
 
@@ -60,7 +61,6 @@ For usage of the command line tool, you can either use the precompiled fingerpri
 
 from the repository or compile the uploaded java code. All setting options are stated below.
   
-
 **Table of contents**
 - [Arguments](#arguments)
   * [Main program arguments](#main-program-arguments)
@@ -87,6 +87,7 @@ from the repository or compile the uploaded java code. All setting options are s
     + [Gaussian](#gaussian-1)
 - [Examples](#examples)
 
+
 # Arguments
 
 ## Main program arguments
@@ -98,7 +99,7 @@ from the repository or compile the uploaded java code. All setting options are s
 | -oi | --orientation-input | The input file for the orientation | *empty* | The must must be a PNG image with grey values where each pixel's value is equal to the orientation at that pixel in degrees (0 - 180). Note that when you supply an orientation image, the `--skip-orientation` flag is implicitly set. | `-oi orientation.png` |
 | -h | --help | Display the help and exit | | | `-h`|
 | --nogui | | Disable plotting the images | | When this flag is set, then no images will be plotted. This can be useful if you want to run the program for a batch of images. | `--nogui` |
-| -pw | --patch-width | The patch width | | Must be a positive integer. Specify either *patch width* and *patch height* or *number of horizontal patches* and *number of vertical patches*. Patch width and height is given precedence over number of horizontal and vertical patches. If no correct values are given, the width and height is set to `16`. | `-pw 16` |
+| -pw | --patch-width | The patch width | | Must be a positive integer. Specify either *patch width* and *patch height* or *number of horizontal patches* and *number of vertical patches*. Patch width and height is given precedence over number of horizontal and vertical patches. If no correct values are given, the number of horizontal and vertical patches is set to `10`. | `-pw 16` |
 | -ph | --patch-height | The patch height | | See comments for `-pw`. | `-ph 16` |
 | -pnh | --patches-horizontal | The number of horizontal patches | | See comments for `-pw`. | `-pnh 10` |
 | -pnv | --patches-vertical | The number of vertical patches | | See comments for `-pw`. | `-pnv 10` |

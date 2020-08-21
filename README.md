@@ -1,4 +1,5 @@
 
+
 # Minutiae Separating Algorithm (MiSeal)
 
 This project includes 
@@ -376,3 +377,13 @@ You can choose from different two-dimensional smoothing algorithms. Some of them
         -do output/divergence.csv \
         input/fingerprint.png
    ```
+
+# License
+
+This package is released under the [GPL3.0 license](https://github.com/jwieditz/MiSeal/blob/master/license).
+
+We acknowledge the following projects which are included in the Java project:
+
+ - JCommander, Copyright 2010 Cedric Beust <cedric@beust.com>, https://github.com/cbeust/jcommander
+ - ControlsFX, https://github.com/controlsfx/controlsfx 
+

@@ -29,13 +29,12 @@ The image provided as an example was taken from <cite>Maio, D., Maltoni, D., Cap
   
 # MiSeal
 
- 1. Install the R-package via
->`library(remotes)
-install_github('jwieditz/MiSeal/MiSeal')
-`
- 2. Load the library via `library(MiSeal)`.
- 3. For a fingerprint application, run `example(MiSeal)`.
- 4. For a general point process application, run `example(PostSeal)`.
+1. Install the R-package MiSeal via
+	 `library(remotes)`
+	`install_github('jwieditz/MiSeal/MiSeal')`
+ 3. Load the library via `library(MiSeal)`.
+ 4. For a fingerprint application, run `example(MiSeal)`.
+ 5. For a general point process application, run `example(PostSeal)`.
 
 We provide an already correctly formatted example data set in the example folder of this repository as well as in the R-packages' data. The simulations were made using the latest R version 4.0.2 (2020-06-22) -- "Taking Off Again". Note that for the execution we additionally require Java 11. For more information, see the R documentation.
 

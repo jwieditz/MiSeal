@@ -378,9 +378,9 @@ You can choose from different two-dimensional smoothing algorithms. Some of them
         input/fingerprint.png
    ```
 
-# License
+# Licence
 
-This package is released under the [GPL3.0 license](https://github.com/jwieditz/MiSeal/blob/master/license).
+This package is released under the [GPL3.0 licence](https://github.com/jwieditz/MiSeal/blob/master/license).
 
 We acknowledge the following projects which are included in the Java project:
 

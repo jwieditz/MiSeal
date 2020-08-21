@@ -1,8 +1,0 @@
-import(spatstat)
-
-importFrom("MASS", "mvrnorm")
-importFrom("readr", "read_table2", "cols", "locale")
-importFrom("stats", "coef", "rbeta", "rbinom", "rgamma", "runif")
-importFrom("utils", "read.csv", "setTxtProgressBar", "txtProgressBar")
-
-exportPattern("^[[:alpha:]]+")

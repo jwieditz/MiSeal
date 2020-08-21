@@ -12,8 +12,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<VBox prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-	  fx:controller="de.unigoettingen.math.fingerprint.display.controller.LoadFilesController">
+
+<VBox prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.unigoettingen.math.fingerprint.display.controller.LoadFilesController">
 	<GridPane hgap="4.0" maxWidth="280.0" minWidth="280.0" prefHeight="150.0" prefWidth="280.0">
 		<columnConstraints>
 			<ColumnConstraints hgrow="NEVER" prefWidth="200.0" />
@@ -82,35 +82,31 @@
 					<Insets bottom="4.0" left="4.0" top="4.0" />
 				</VBox.margin>
 			</Text>
-			<TextField fx:id="orientationFileField" VBox.vgrow="NEVER">
+			<TextField fx:id="orientationFileField" text="[optional]" VBox.vgrow="NEVER">
 				<VBox.margin>
 					<Insets bottom="4.0" left="4.0" />
 				</VBox.margin>
+            <font>
+               <Font name="System Italic" size="13.0" />
+            </font>
 			</TextField>
 		</VBox>
-		<Button mnemonicParsing="false" onAction="#onClickLoadImage" text="Select"
-				GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+		<Button mnemonicParsing="false" onAction="#onClickLoadImage" text="Select" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
 			<GridPane.margin>
 				<Insets bottom="4.0" />
 			</GridPane.margin>
 		</Button>
-		<Button mnemonicParsing="false" onAction="#onClickLoadRoi" text="Select"
-				GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1"
-				GridPane.valignment="BOTTOM">
+		<Button mnemonicParsing="false" onAction="#onClickLoadRoi" text="Select" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
 			<GridPane.margin>
 				<Insets bottom="4.0" />
 			</GridPane.margin>
 		</Button>
-		<Button mnemonicParsing="false" onAction="#onClickLoadMinutiae" text="Select"
-				GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2"
-				GridPane.valignment="BOTTOM">
+		<Button mnemonicParsing="false" onAction="#onClickLoadMinutiae" text="Select" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
 			<GridPane.margin>
 				<Insets bottom="4.0" />
 			</GridPane.margin>
 		</Button>
-		<Button mnemonicParsing="false" onAction="#onClickLoadOrientation" text="Select"
-				GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3"
-				GridPane.valignment="BOTTOM">
+		<Button mnemonicParsing="false" onAction="#onClickLoadOrientation" text="Select" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
 			<GridPane.margin>
 				<Insets bottom="4.0" />
 			</GridPane.margin>
@@ -136,11 +132,8 @@
 			<Label fx:id="patchDim1Name" text="Width:" />
 			<TextField fx:id="patchDim1Field" prefWidth="75.0" GridPane.columnIndex="1" />
 			<Label fx:id="patchDim2Name" text="Height:" GridPane.rowIndex="1" />
-			<TextField fx:id="patchDim2Field" prefWidth="75.0" GridPane.columnIndex="1"
-					   GridPane.rowIndex="1" />
-			<Button mnemonicParsing="false" onAction="#onSwitchPatchDim" text="Switch"
-					GridPane.columnIndex="2" GridPane.halignment="CENTER"
-					GridPane.rowSpan="2147483647" GridPane.valignment="CENTER">
+			<TextField fx:id="patchDim2Field" prefWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+			<Button mnemonicParsing="false" onAction="#onSwitchPatchDim" text="Switch" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowSpan="2147483647" GridPane.valignment="CENTER">
 				<GridPane.margin>
 					<Insets />
 				</GridPane.margin>

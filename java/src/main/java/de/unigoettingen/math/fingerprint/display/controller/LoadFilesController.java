@@ -142,7 +142,7 @@ public class LoadFilesController implements IController {
         imageFileField.setText(null);
         roiFileField.setText(null);
         minutiaeFileField.setText(null);
-        orientationFileField.setText(null);
+        orientationFileField.setText("[optional]");
         patchDim1Field.setText("10");
         patchDim2Field.setText("10");
         patchDim1Name.setText("#Horizontal:");

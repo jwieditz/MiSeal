@@ -166,11 +166,11 @@ public class FingerprintAnalysis {
             new ImageDisplay(image.getNormalizedImageMatrix()).withMinutiae(minutiae).display("normalized");
         }
 
-
         // --------------------------------------
         // step 2: calculate the local orientation
         // --------------------------------------
 
+        System.out.println("Compute orientation field...");
         estimateOrientation(image, orientationEstimator, ARGS.orientationArgs);
         unwrapImage(image, ARGS.orientationArgs, padding);
 
@@ -178,23 +178,27 @@ public class FingerprintAnalysis {
         // step 3: estimate the local ridge frequency
         // --------------------------------------
 
+        System.out.println("Compute local ridge frequency...");
         estimateRidgeFrequency(image, frequencyEstimator, ARGS.ridgeFrequencyArgs);
 
         // --------------------------------------
         // step 4: estimate the divergence
         // --------------------------------------
 
+        System.out.println("Compute field divergence...");
         estimateDivergence(image, divergenceEstimator, ARGS.divergenceArgs);
 
         // --------------------------------------
         // step 5: calculate the line divergence
         // --------------------------------------
 
+        System.out.println("Compute ridge divergence...");
         estimateLineDivergence(image, lineDivergenceCalculator, ARGS.lineDivergenceArgs);
 
         // --------------------------------------
         // step 6: estimate the intensity
         // --------------------------------------
+        System.out.println("Compute intensity of necessary minutiae...");
         estimateIntensity(image, intensityEstimator, ARGS.intensityArgs);
 
         System.out.println("Finished image \"" + ARGS.inputFile + "\"");
@@ -291,7 +295,7 @@ public class FingerprintAnalysis {
         } else if (ARGS.patchNumHorizontal > 0 && ARGS.patchNumVertical > 0){
             image.createPatches(ARGS.patchNumHorizontal, ARGS.patchNumVertical, padding.getPadX(), padding.getPadY());
         } else {
-            image.createPatchesForSize(16, 16, padding.getPadX(), padding.getPadY());
+            image.createPatches(10, 10, padding.getPadX(), padding.getPadY());
         }
 
         Unwrapper unwrapper = new Unwrapper();
@@ -498,6 +502,7 @@ public class FingerprintAnalysis {
     private static void estimateIntensity(FingerprintImage image, IntensityEstimator estimator, IntensityArgs args) {
         if (estimator != null) {
             estimator.estimateIntensity(image);
+            estimator.estimateNecessaryMinutiae(image);
         }
 
         try {

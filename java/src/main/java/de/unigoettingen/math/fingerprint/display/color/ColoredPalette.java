@@ -11,7 +11,7 @@ public class ColoredPalette implements ColorPalette {
 
     @Override
     public String getName() {
-        return "colored";
+        return "coloured";
     }
 
     @Override

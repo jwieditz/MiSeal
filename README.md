@@ -1,5 +1,4 @@
 
-
 # Minutiae Separating Algorithm (MiSeal)
 
 This project includes 
@@ -31,6 +30,7 @@ The image provided as an example was taken from <cite>Maio, D., Maltoni, D., Cap
 
 1. Install the R-package MiSeal via
 	`library(remotes)`
+
 	`install_github('jwieditz/MiSeal/MiSeal')`.
 2. Load the library via `library(MiSeal)`.
 3. For a fingerprint application, run `example(MiSeal)`.
@@ -41,26 +41,23 @@ We provide an already correctly formatted example data set in the example folder
 
 # Graphical fingerprint tool
 
- 1. Unzip the jmiseal.zip archive from the GUI folder.
- 2. Go to the /jmiseal/bin folder.
- 3. Depending on your OS run the following file:
+ 1. Unzip the miseal.zip archive from the GUI folder.
+ 2. Go to the /miseal/bin folder.
+ 3. Depending on your operating system run the following file:
 	 - ## Linux
-		 - JMiSeal
+		 - MiSeal
 	 - ## Windows
-		 - JMiSeal.bat
+		 - MiSeal.bat
 	 - ## macOS
 		 - currently not available
 
 
 
-
-  
-
 # Command line fingerprint tool
 
-For usage of the command line tool, you can either use the precompiled fingerprint.jar from the commandLineTool folder via
+For usage of the command line tool, you can either use the precompiled miseal.jar from the commandLineTool folder via
 
-> `java -jar fingerprint.jar [OPTIONS] fingerprint_image.png`
+`java -jar miseal.jar [OPTIONS] fingerprint_image.png`
 
 from the repository or compile the uploaded java code. All setting options are stated below.
   
@@ -347,18 +344,18 @@ You can choose from different two-dimensional smoothing algorithms. Some of them
 
 * Run the program on the image `input/fingerprint.png` with default arguments:  
    ```
-   $ java -jar fingerprint.jar input/fingerprint.png
+   $ java -jar miseal.jar input/fingerprint.png
    ```
 * Run the program on the image `input/fingerprint.png` with minutiae `input/minutiae.txt` and orientation image `input/orientation.png`.
    ```
-   $ java -jar fingerprint.jar \
+   $ java -jar miseal.jar \
         -m input/minutiae.txt \
         -oi input/orientation.png \
         input/fingerprint.png`
    ```
 * Run the program on the image `input/fingerprint.png` without estimating the ridge frequency and without plotting the images, use the `default` divergence estimator and save the divergence to `output/divergence.csv`.
    ```
-   $ java -jar fingerprint.jar \
+   $ java -jar miseal.jar \
         --nogui \
         --skip-ridge-frequency \
         -d default \
@@ -367,7 +364,7 @@ You can choose from different two-dimensional smoothing algorithms. Some of them
    ```
 * Run the program on the image `input/fingerprint.png` with orientation image `input/orientation.png`, save the curved region ridge frequency to `output/ridgefrequency.csv` and estimate the divergence using curved regions with average smoothing of size 35, but without using the real distance and without removing the line divergence. Finally, save the divergence to `output/divergence.csv`.
    ```
-   $ java -jar fingerprint.jar \
+   $ java -jar miseal.jar \
         -oi input/orientation.png \
         -r cr \
         -ro output/ridgefrequency.csv \

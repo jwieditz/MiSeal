@@ -29,6 +29,7 @@ The image provided as an example was taken from <cite>Maio, D., Maltoni, D., Cap
 # MiSeal
 
 1. Install the R-package MiSeal via
+
 	`library(remotes)`
 
 	`install_github('jwieditz/MiSeal/MiSeal')`.

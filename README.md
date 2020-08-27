@@ -61,7 +61,7 @@ To start analysing a fingerprint, follow the following steps:
 	 * Select a file containing the region of interest (ROI) using the *Select*-Button next to the *Region of interest*-Textbox. 
 This restricts all computations to the entered ROI and enables the *Show ROI*-Button.
 	 * Select a file containing a pre-extracted minutiae pattern using the *Select*-Button next to the *Minutiae*-Textbox. This enables the *Show minutiae*-Button.
-	 * Select a file containing a pre-computed orientation field using the *Select*-Button next to the *Orientation*-Button. 
+	 * Select a file containing a pre-computed orientation field using the *Select*-Button next to the *Orientation*-Button. This will skip the computation of the orientation and will use the entered orientation field instead.
 	 * You can change the algorithm's parameters and skip computation steps in the accordeon on the left side under steps 2 - 7.
  7. Click **Analyse**.
 

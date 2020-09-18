@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.glyphfont.Glyph?>
+
+<BorderPane minWidth="920.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jwieditz.miseal.display.controller.ImageTabController">
+	<center>
+		<HBox fx:id="imagesGrid" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="400.0" BorderPane.alignment="CENTER">
+			<children>
+				<Pane fx:id="originalImageContainer" prefHeight="200.0" prefWidth="200.0">
+					<GridPane.margin>
+						<Insets bottom="20.0" left="20.0" right="10.0" top="20.0" />
+					</GridPane.margin>
+					<padding>
+						<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+					</padding>
+					<cursor>
+						<Cursor fx:constant="CROSSHAIR" />
+					</cursor>
+				</Pane>
+				<Pane fx:id="imageContainer" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+					<GridPane.margin>
+						<Insets bottom="20.0" left="10.0" right="20.0" top="20.0" />
+					</GridPane.margin>
+					<padding>
+						<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+					</padding>
+					<cursor>
+						<Cursor fx:constant="CROSSHAIR" />
+					</cursor>
+				</Pane>
+			</children>
+			<BorderPane.margin>
+				<Insets left="16.0" right="16.0" />
+			</BorderPane.margin>
+		</HBox>
+	</center>
+	<right>
+		<GridPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="NEVER" minWidth="-Infinity" percentWidth="35.0" prefWidth="70.0" />
+				<ColumnConstraints hgrow="NEVER" minWidth="-Infinity" percentWidth="30.0" prefWidth="60.0" />
+				<ColumnConstraints hgrow="NEVER" minWidth="-Infinity" percentWidth="35.0" prefWidth="70.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints fillHeight="false" />
+				<RowConstraints maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="20.0" vgrow="NEVER" />
+				<RowConstraints maxHeight="1.7976931348623157E308" minHeight="-Infinity" vgrow="NEVER" />
+				<RowConstraints vgrow="NEVER" />
+				<RowConstraints vgrow="NEVER" />
+				<RowConstraints minHeight="-Infinity" prefHeight="20.0" vgrow="NEVER" />
+				<RowConstraints vgrow="NEVER" />
+				<RowConstraints vgrow="NEVER" />
+				<RowConstraints vgrow="NEVER" />
+			</rowConstraints>
+			<children>
+				<Pane fx:id="scale" GridPane.columnSpan="2" GridPane.hgrow="NEVER" GridPane.vgrow="ALWAYS">
+					<padding>
+						<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+					</padding>
+					<GridPane.margin>
+						<Insets bottom="4.0" left="4.0" right="4.0" top="10.0" />
+					</GridPane.margin>
+				</Pane>
+				<Label text="x:" GridPane.rowIndex="2">
+					<GridPane.margin>
+						<Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+					</GridPane.margin>
+				</Label>
+				<Label text="-" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" fx:id="xPosText" />
+				<Label text="y:" GridPane.rowIndex="3">
+					<GridPane.margin>
+						<Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+					</GridPane.margin>
+				</Label>
+				<Label fx:id="yPosText" text="-" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+				<Label text="Value:" GridPane.rowIndex="4">
+					<GridPane.margin>
+						<Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+					</GridPane.margin>
+				</Label>
+				<Label fx:id="valueText" text="-" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
+				<CheckBox fx:id="useLog10" mnemonicParsing="false" onAction="#onSelectUseLog10" selected="true" text="logarithmic (log10)" GridPane.columnSpan="2147483647" GridPane.rowIndex="7">
+					<GridPane.margin>
+						<Insets bottom="4.0" left="8.0" top="4.0" />
+					</GridPane.margin>
+				</CheckBox>
+				<ComboBox fx:id="comboColour" onAction="#onComboColourChange" promptText="greyscale" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="8">
+					<GridPane.margin>
+						<Insets bottom="4.0" left="8.0" right="4.0" top="4.0" />
+					</GridPane.margin>
+				</ComboBox>
+				<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Scale:" GridPane.rowIndex="6">
+					<GridPane.margin>
+						<Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+					</GridPane.margin>
+				</Text>
+				<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Colour:" GridPane.rowIndex="8">
+					<GridPane.margin>
+						<Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+					</GridPane.margin>
+				</Text>
+				<Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" />
+				<Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+					<GridPane.margin>
+						<Insets />
+					</GridPane.margin>
+				</Separator>
+			</children>
+			<padding>
+				<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+			</padding>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+		</GridPane>
+	</right>
+	<bottom>
+		<GridPane BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+				<ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="-Infinity" prefWidth="600.0" />
+				<ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
+			</columnConstraints>
+			<children>
+				<ButtonBar buttonOrder="Original&#10;Normalised&#10;Orientation&#10;Ridge Frequency&#10;Field Divergence&#10;Ridge Divergence&#10;Intensity" minWidth="800.0" nodeOrientation="LEFT_TO_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1">
+					<buttons>
+						<ToggleButton fx:id="buttonNormalized" disable="true" mnemonicParsing="false" onAction="#onClickShowNormalizedImage" text="Normalised" />
+						<ToggleButton fx:id="buttonOrientation" disable="true" mnemonicParsing="false" onAction="#onClickShowOrientationImage" text="Orientation" />
+						<ToggleButton fx:id="buttonRidgeFrequency" disable="true" mnemonicParsing="false" onAction="#onClickShowRidgeFrequencyImage" text="Ridge Frequency" />
+						<ToggleButton fx:id="buttonDivergence" disable="true" mnemonicParsing="false" onAction="#onClickShowDivergenceImage" text="Field Divergence" />
+						<ToggleButton fx:id="buttonLineDivergence" disable="true" mnemonicParsing="false" onAction="#onClickShowLineDivergenceImage" text="Ridge Divergence" />
+						<ToggleButton fx:id="buttonIntensity" disable="true" mnemonicParsing="false" onAction="#onClickShowIntensityImage" text="Intensity" />
+						<ToggleButton fx:id="buttonNecessaryMinutiae" disable="true" mnemonicParsing="false" onAction="#onClickShowNecessaryMinutiaeImage" text="Necessary Minutiae" />
+					</buttons>
+					<GridPane.margin>
+						<Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+					</GridPane.margin>
+					<padding>
+						<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+					</padding>
+				</ButtonBar>
+				<ButtonBar buttonOrder="Show ROI&#10;Show minutiae&#10;Show orientation&#10;Show integral lines" minWidth="720.0" nodeOrientation="LEFT_TO_RIGHT" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+					<GridPane.margin>
+						<Insets bottom="16.0" left="4.0" right="4.0" top="2.0" />
+					</GridPane.margin>
+					<buttons>
+						<ToggleButton fx:id="toggleMinutiaeButton" disable="true" mnemonicParsing="false" onAction="#onToggleMinutiae" text="Show minutiae" />
+						<ToggleButton fx:id="toggleRoiButton" disable="true" mnemonicParsing="false" onAction="#onToggleRoi" text="Show ROI" />
+						<ToggleButton fx:id="toggleOrientationButton" disable="true" mnemonicParsing="false" onAction="#onToggleOrientation" text="Show orientation" />
+						<ToggleButton fx:id="toggleIntegralLinesButton" disable="true" mnemonicParsing="false" onAction="#onToggleIntegralLines" text="Show integral lines" />
+						<ToggleButton fx:id="togglePatchesButton" disable="true" mnemonicParsing="false" onAction="#onTogglePatches" text="Show patches" />
+						<ToggleButton fx:id="toggleSingularitiesButton" disable="true" mnemonicParsing="false" onAction="#onToggleSingularities" text="Show singularities" />
+					</buttons>
+					<padding>
+						<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+					</padding>
+				</ButtonBar>
+				<Button fx:id="buttonAnalyze" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickAnalyze" prefWidth="288.0" text="ANALYSE" GridPane.rowSpan="2147483647">
+					<padding>
+						<Insets bottom="4.0" left="5.0" right="5.0" top="4.0" />
+					</padding>
+					<GridPane.margin>
+						<Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+					</GridPane.margin>
+					<font>
+						<Font name="System Bold" size="18.0" />
+					</font>
+				</Button>
+				<Slider fx:id="imageScale" maxWidth="-Infinity" onMouseClicked="#onClickImageScale" prefWidth="600.0" value="50.0" GridPane.columnIndex="1" GridPane.hgrow="NEVER">
+					<GridPane.margin>
+						<Insets bottom="8.0" top="8.0" />
+					</GridPane.margin>
+				</Slider>
+				<Button fx:id="buttonClearAllImages" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#onClickClearAllImages" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
+					<graphic>
+						<Glyph fontFamily="FontAwesome" fontSize="48" icon="TRASH" />
+					</graphic>
+				</Button>
+			</children>
+			<rowConstraints>
+				<RowConstraints />
+				<RowConstraints vgrow="NEVER" />
+				<RowConstraints vgrow="NEVER" />
+			</rowConstraints>
+		</GridPane>
+	</bottom>
+	<left>
+		<Accordion fx:id="accordion" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="320.0" BorderPane.alignment="TOP_LEFT">
+			<panes>
+				<TitledPane fx:id="loadFilesPane" text="1. Load files">
+					<AnchorPane minHeight="-Infinity" minWidth="-Infinity">
+						<fx:include fx:id="loadFiles" source="load_files.fxml" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.0" />
+					</AnchorPane>
+				</TitledPane>
+				<TitledPane expanded="false" text="2. Normalisation">
+					<AnchorPane>
+						<GridPane layoutX="9.600000381469727" layoutY="17.600000381469727" prefWidth="280.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="8.0">
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints vgrow="SOMETIMES" />
+								<RowConstraints vgrow="SOMETIMES" />
+							</rowConstraints>
+							<children>
+								<CheckBox fx:id="skipNormalization" mnemonicParsing="false" onAction="#onSelectSkipNormalization" text="Skip step">
+									<GridPane.margin>
+										<Insets bottom="4.0" left="4.0" top="4.0" />
+									</GridPane.margin>
+								</CheckBox>
+								<Pane GridPane.rowIndex="1">
+									<fx:include fx:id="normalization" source="normalization.fxml" />
+								</Pane>
+							</children>
+						</GridPane>
+					</AnchorPane>
+				</TitledPane>
+				<TitledPane expanded="false" text="3. Orientation">
+					<AnchorPane>
+						<children>
+							<GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="280.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="8.0">
+								<columnConstraints>
+									<ColumnConstraints hgrow="SOMETIMES" />
+									<ColumnConstraints hgrow="SOMETIMES" />
+								</columnConstraints>
+								<rowConstraints>
+									<RowConstraints vgrow="SOMETIMES" />
+									<RowConstraints vgrow="SOMETIMES" />
+									<RowConstraints vgrow="SOMETIMES" />
+									<RowConstraints vgrow="SOMETIMES" />
+								</rowConstraints>
+								<children>
+									<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Unwrapping">
+										<GridPane.margin>
+											<Insets bottom="4.0" left="4.0" top="4.0" />
+										</GridPane.margin>
+									</Text>
+									<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Method" GridPane.rowIndex="2">
+										<GridPane.margin>
+											<Insets bottom="4.0" left="4.0" top="4.0" />
+										</GridPane.margin>
+									</Text>
+									<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Options" GridPane.rowIndex="1">
+										<font>
+											<Font size="10.0" />
+										</font>
+										<GridPane.margin>
+											<Insets bottom="4.0" left="4.0" top="4.0" />
+										</GridPane.margin>
+									</Text>
+									<AnchorPane GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
+										<Pane fx:id="orientationOptions" />
+										<GridPane.margin>
+											<Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+										</GridPane.margin>
+									</AnchorPane>
+									<ComboBox fx:id="unwrapType" promptText="default" GridPane.columnIndex="1" />
+									<ComboBox fx:id="comboOrientation" onAction="#comboOrientationChange" prefHeight="26.0" promptText="default" GridPane.columnIndex="1" GridPane.rowIndex="2">
+										<items>
+											<FXCollections fx:factory="observableArrayList">
+												<String fx:value="default" />
+												<String fx:value="hwj" />
+											</FXCollections>
+										</items>
+									</ComboBox>
+								</children>
+							</GridPane>
+						</children>
+					</AnchorPane>
+				</TitledPane>
+				<TitledPane expanded="false" layoutX="10.0" layoutY="62.0" text="4. Ridge Frequency">
+					<AnchorPane>
+						<GridPane layoutX="9.600000381469727" layoutY="17.600000381469727" prefWidth="280.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="8.0">
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+								<ColumnConstraints hgrow="SOMETIMES" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints vgrow="SOMETIMES" />
+								<RowConstraints vgrow="SOMETIMES" />
+								<RowConstraints vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="19.33331298828125" vgrow="SOMETIMES" />
+							</rowConstraints>
+							<children>
+								<CheckBox fx:id="skipRidgeFrequency" mnemonicParsing="false" onAction="#onSelectSkipRidgeFrequency" text="Skip step">
+									<GridPane.margin>
+										<Insets bottom="4.0" left="4.0" top="4.0" />
+									</GridPane.margin>
+								</CheckBox>
+								<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Method" wrappingWidth="48.75634765625" GridPane.rowIndex="1">
+									<GridPane.margin>
+										<Insets bottom="4.0" left="4.0" top="4.0" />
+									</GridPane.margin>
+								</Text>
+								<ComboBox fx:id="comboRidgeFrequency" onAction="#onRidgeFrequencyComboChange" promptText="default" GridPane.columnIndex="1" GridPane.rowIndex="1">
+									<items>
+										<FXCollections fx:factory="observableArrayList">
+											<String fx:value="default" />
+											<String fx:value="curved region" />
+										</FXCollections>
+									</items>
+									<GridPane.margin>
+										<Insets bottom="4.0" left="4.0" top="4.0" />
+									</GridPane.margin>
+								</ComboBox>
+								<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Options" GridPane.rowIndex="2">
+									<font>
+										<Font size="10.0" />
+									</font>
+									<GridPane.margin>
+										<Insets bottom="4.0" left="4.0" top="4.0" />
+									</GridPane.margin>
+								</Text>
+								<Pane fx:id="ridgeFrequencyOptions" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+							</children>
+						</GridPane>
+					</AnchorPane>
+				</TitledPane>
+				<TitledPane expanded="false" layoutX="10.0" layoutY="464.0" text="5. Field Divergence">
+					<AnchorPane>
+						<GridPane layoutX="9.600000381469727" layoutY="17.600000381469727" prefWidth="280.0" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="8.0">
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" />
+								<ColumnConstraints hgrow="SOMETIMES" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints vgrow="SOMETIMES" />
+								<RowConstraints vgrow="SOMETIMES" />
+								<RowConstraints vgrow="SOMETIMES" />
+								<RowConstraints vgrow="SOMETIMES" />
+							</rowConstraints>
+							<children>
+								<CheckBox fx:id="skipDivergence" mnemonicParsing="false" onAction="#onSelectSkipDivergence" text="Skip step">
+									<GridPane.margin>
+										<Insets bottom="4.0" left="4.0" top="4.0" />
+									</GridPane.margin>
+								</CheckBox>
+								<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Method" wrappingWidth="48.75634765625" GridPane.rowIndex="1">
+									<GridPane.margin>
+										<Insets bottom="4.0" left="4.0" top="4.0" />
+									</GridPane.margin>
+								</Text>
+								<ComboBox fx:id="comboDivergence" onAction="#onDivergenceComboChange" promptText="default" GridPane.columnIndex="1" GridPane.rowIndex="1">
+									<items>
+										<FXCollections fx:factory="observableArrayList">
+											<String fx:value="default" />
+											<String fx:value="curved region" />
+										</FXCollections>
+									</items>
+									<GridPane.margin>
+										<Insets bottom="4.0" left="4.0" top="4.0" />
+									</GridPane.margin>
+								</ComboBox>
+								<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Options" GridPane.rowIndex="2">
+									<font>
+										<Font size="10.0" />
+									</font>
+									<GridPane.margin>
+										<Insets bottom="4.0" left="4.0" top="4.0" />
+									</GridPane.margin>
+								</Text>
+								<Pane fx:id="divergenceOptions" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
+									<GridPane.margin>
+										<Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+									</GridPane.margin>
+								</Pane>
+							</children>
+						</GridPane>
+					</AnchorPane>
+				</TitledPane>
+				<TitledPane expanded="false" layoutX="10.0" layoutY="464.0" text="6. Ridge Divergence">
+					<AnchorPane>
+						<GridPane layoutX="9.600000381469727" layoutY="17.600000381469727" prefWidth="280.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="8.0">
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+							</rowConstraints>
+							<children>
+								<CheckBox fx:id="skipLineDivergence" mnemonicParsing="false" onAction="#onSelectSkipLineDivergence" text="Skip step">
+									<GridPane.margin>
+										<Insets bottom="4.0" left="4.0" top="4.0" />
+									</GridPane.margin>
+								</CheckBox>
+								<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Options" GridPane.rowIndex="1">
+									<font>
+										<Font size="10.0" />
+									</font>
+									<GridPane.margin>
+										<Insets bottom="4.0" left="4.0" top="4.0" />
+									</GridPane.margin>
+								</Text>
+								<Pane GridPane.rowIndex="2">
+									<fx:include fx:id="lineDivergence" source="line_divergence_options.fxml" />
+								</Pane>
+							</children>
+						</GridPane>
+					</AnchorPane>
+				</TitledPane>
+				<TitledPane animated="false" text="7. Intensity">
+					<AnchorPane>
+						<GridPane layoutX="9.600000381469727" layoutY="17.600000381469727" prefWidth="280.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="8.0">
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+							</rowConstraints>
+							<children>
+								<CheckBox fx:id="skipIntensity" mnemonicParsing="false" text="Skip step">
+									<GridPane.margin>
+										<Insets bottom="4.0" left="4.0" top="4.0" />
+									</GridPane.margin>
+								</CheckBox>
+							</children>
+						</GridPane>
+					</AnchorPane>
+				</TitledPane>
+			</panes>
+		</Accordion>
+	</left>
+   <padding>
+      <Insets bottom="5.0" right="5.0" />
+   </padding>
+</BorderPane>

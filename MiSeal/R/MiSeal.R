@@ -321,7 +321,19 @@ MiSeal <- function( imagePath, roiPath, minutiaePath, T = 1E6, burnIn = 1E4 ){
 
   imageName <- sub(pattern = "(.*)\\..*$", replacement = "\\1", basename(imagePath))
 
-  resultsDirectory <- "~/MiSeal/"
+  osName <- Sys.info()[1]
+
+  if( osName == "Linux" ){
+    resultsDirectory <- "~/MiSeal/"
+  } else if ( osName == "Windows" ){
+    resultsDirectory <- "%USERPROFILE%/"
+  } else if ( osName == "macOS" ){
+    resulsDirectory <- "/home/"
+  } else {
+    print("Operating system is currently not supported")
+    return()
+  }
+
   dir.create(file.path(resultsDirectory), showWarnings = FALSE)
   dir.create(file.path(resultsDirectory, "RidgeFrequency"), showWarnings = FALSE)
   dir.create(file.path(resultsDirectory, "FieldDivergence"), showWarnings = FALSE)

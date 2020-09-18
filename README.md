@@ -1,5 +1,6 @@
 
 
+
 # Minutiae Separating Algorithm (MiSeal)
 
 This project includes 
@@ -18,14 +19,14 @@ If you are interested in
  - the graphical tool, go to [graphical fingerprint tool](#graphical-fingerprint-tool),
  - the command line tool, go to [command line fingerprint tool](#command-line-fingerprint-tool).
 
-This repository is supplementary to <cite>Wieditz, J., Pokern, Y., Schuhmacher, D., Huckemann, S. (2020+). Characteristic and Necessary Minutiae in Fingerprints.</cite>
+This repository is supplementary to [<cite>Wieditz, J., Pokern, Y., Schuhmacher, D., Huckemann, S. (2020+). Characteristic and Necessary Minutiae in Fingerprints</cite>](https://arxiv.org/abs/2009.07910).
 
 | ![ScreenshotGUI](https://github.com/jwieditz/MiSeal/blob/master/GUI/GUI_screenshot.png) | 
 |:--:| 
 | *Screenshot of the [graphical fingerprint tool](#graphical-fingerprint-tool) applied to the provided example.* |
 
 ## Acknowledgements
-The image provided as an example was taken from <cite>Maio, D., Maltoni, D., Cappelli, R., Wayman, J. L., & Jain, A. K. (2002, August). FVC2002: Second fingerprint verification competition. In Object recognition supported by user interaction for service robots (Vol. 3, pp. 811-814). IEEE.</cite>
+The image provided as an example was taken from [<cite>Maio, D., Maltoni, D., Cappelli, R., Wayman, J. L., & Jain, A. K. (2002, August). FVC2002: Second fingerprint verification competition. In Object recognition supported by user interaction for service robots (Vol. 3, pp. 811-814). IEEE.</cite>](https://ieeexplore.ieee.org/abstract/document/1048144)
   
 # MiSeal
 
@@ -140,7 +141,7 @@ from the repository or compile the uploaded java code. All setting options are s
 
 | name | alternative names | description | default value | comment | example |
 | --- | --- | --- | --- | --- | --- |
-| -o | --orientation | Choose the orientation estimation method | default | Possible values are: <ol><li>*`default`: The default orientation estimator which is based on the image gradient method.<li>`hwj`: This method uses the estimation method proposed in "Fingerprint Image Enhancement: Algorithm and Performance Evaluation" by Hong et al.</ol> | `-o hwj` |
+| -o | --orientation | Choose the orientation estimation method | default | Possible values are: <ol><li>*`default`: The default orientation estimator which is based on the image gradient method.<li>`hwj`: This method uses the estimation method proposed in [<cite> "Fingerprint Image Enhancement: Algorithm and Performance Evaluation" by Hong et al. (1998)</cite>](https://ieeexplore.ieee.org/abstract/document/709565)</ol> | `-o hwj` |
 | -oo | --orientation-output | The output file for the image orientation (.csv) | *empty* | The orientation field will be written as a CSV file where each entry represents the orientation in radians at position (column, row). | `-oo output/orientation.csv` |
 | -Odefault | | Dynamic parameters for the default orientation estimation method | *empty* | If you have chosen `default` as the orientation method, you can use this parameter to pass additional arguments to the default orientation estimation. See below for a full list.| `-OdefaultSomeValue=123` |
 | -Ohwj | | Dynamic parameters for the HWJ orientation estimation method | *empty* | If you have chosen `hwj` as the orientation estimation method, you can use this parameter to pass additional arguments to the HWJ orientation estimator. See below for a full list. | `-OhwjSomeValue=123` |

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <?import javafx.scene.control.SeparatorMenuItem?>
-<GridPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jwieditz.miseal.display.controller.MainController">
+<GridPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.unigoettingen.math.fingerprint.display.controller.MainController">
 	<columnConstraints>
 		<ColumnConstraints hgrow="ALWAYS" percentWidth="100.0" />
 	</columnConstraints>

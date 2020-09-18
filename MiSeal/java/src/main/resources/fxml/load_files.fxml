@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jwieditz.miseal.display.controller.LoadFilesController">
+<VBox prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.unigoettingen.math.fingerprint.display.controller.LoadFilesController">
 	<GridPane hgap="4.0" maxWidth="280.0" minWidth="280.0" prefHeight="150.0" prefWidth="280.0">
 		<columnConstraints>
 			<ColumnConstraints hgrow="NEVER" prefWidth="200.0" />

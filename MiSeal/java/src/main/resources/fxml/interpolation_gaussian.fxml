@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<DialogPane maxHeight="-Infinity" minHeight="-Infinity" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jwieditz.miseal.display.dialog.InterpolationGaussianDialogController">
+<DialogPane maxHeight="-Infinity" minHeight="-Infinity" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.unigoettingen.math.fingerprint.display.dialog.InterpolationGaussianDialogController">
    <content>
       <GridPane vgap="4.0">
         <columnConstraints>

@@ -1,4 +1,4 @@
-module de.jwieditz.miseal {
+module de.unigoettingen.math.fingerprint {
     requires javafx.controls;
     requires java.desktop;
     requires javafx.fxml;
@@ -6,13 +6,13 @@ module de.jwieditz.miseal {
     requires jcommander;
     requires org.controlsfx.controls;
 
-    exports de.jwieditz.miseal;
-    exports de.jwieditz.miseal.display;
-    exports de.jwieditz.miseal.display.controller;
-    exports de.jwieditz.miseal.display.dialog;
-    exports de.jwieditz.miseal.cli;
+    exports de.unigoettingen.math.fingerprint;
+    exports de.unigoettingen.math.fingerprint.display;
+    exports de.unigoettingen.math.fingerprint.display.controller;
+    exports de.unigoettingen.math.fingerprint.display.dialog;
+    exports de.unigoettingen.math.fingerprint.cli;
 
-    opens de.jwieditz.miseal.display to javafx.fxml;
-    opens de.jwieditz.miseal.display.controller to javafx.fxml;
-    opens de.jwieditz.miseal.display.dialog to javafx.fxml;
+    opens de.unigoettingen.math.fingerprint.display to javafx.fxml;
+    opens de.unigoettingen.math.fingerprint.display.controller to javafx.fxml;
+    opens de.unigoettingen.math.fingerprint.display.dialog to javafx.fxml;
 }

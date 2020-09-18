@@ -12,6 +12,3 @@ LazyData: true
 Depends: R (>= 4.0.2), spatstat (>= 1.64-1)
 Imports: readr, MASS
 RoxygenNote: 7.1.1
-NeedsCompilation: no
-Packaged: 2020-08-21 14:38:12 UTC; jwieditz
-Author: Johannes Wieditz [aut, cre]
